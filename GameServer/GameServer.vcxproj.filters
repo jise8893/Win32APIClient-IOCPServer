@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Default">
+      <UniqueIdentifier>{ea6f501f-009e-418f-8de3-ca73d3324a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{dce8da45-6e4d-48a1-8e55-55e8283264fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore">
+      <UniqueIdentifier>{6196a42e-8555-43c4-9842-6763840e9787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\Session">
+      <UniqueIdentifier>{a9753635-757b-4555-91e2-b3dd3765c0a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpCore">
+      <UniqueIdentifier>{37c441c8-fe8c-4497-aa26-571de15a05c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\Core">
+      <UniqueIdentifier>{5d5277eb-265b-4566-976b-35dc6a7c7b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpEvent">
+      <UniqueIdentifier>{9fc10507-3a44-4e2f-a30e-3a67ae965ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpEvent\AcceptEvent">
+      <UniqueIdentifier>{2b8deb83-074f-4342-bcd6-c533a0807e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpEvent\ConnectEvent">
+      <UniqueIdentifier>{9a330f98-8aeb-4cef-b7e0-a2dbe361c97f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\Manager">
+      <UniqueIdentifier>{e95ea67d-6a7e-472a-9aa4-2895aef052bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpEvent\RecvEvent">
+      <UniqueIdentifier>{87abfdae-529e-4729-9a91-fe1293498b50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\Session\Packet">
+      <UniqueIdentifier>{c83db00f-6895-425c-9304-215ed8e63107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\Core\Buffer">
+      <UniqueIdentifier>{4f000a43-040c-4f58-94ee-cdf1f13d968a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ServerCore\IocpEvent\SendEvent">
+      <UniqueIdentifier>{d8a249ae-8c5a-4cae-8dee-76dd7aa2081b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameServer.cpp">
+      <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>ServerCore\Session</Filter>
+    </ClCompile>
+    <ClCompile Include="IocpCore.cpp">
+      <Filter>ServerCore\IocpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerCore.cpp">
+      <Filter>ServerCore\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="IocpEvent.cpp">
+      <Filter>ServerCore\IocpEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceptEvent.cpp">
+      <Filter>ServerCore\IocpEvent\AcceptEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectEvent.cpp">
+      <Filter>ServerCore\IocpEvent\ConnectEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="RecvBuffer.cpp">
+      <Filter>ServerCore\Core\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendBuffer.cpp">
+      <Filter>ServerCore\Core\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadMgr.cpp">
+      <Filter>ServerCore\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="RecvEvent.cpp">
+      <Filter>ServerCore\IocpEvent\RecvEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet.cpp">
+      <Filter>ServerCore\Session\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="SendEvent.cpp">
+      <Filter>ServerCore\IocpEvent\SendEvent</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>ServerCore\Session</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpCore.h">
+      <Filter>ServerCore\IocpCore</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerCore.h">
+      <Filter>ServerCore\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpEvent.h">
+      <Filter>ServerCore\IocpEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceptEvent.h">
+      <Filter>ServerCore\IocpEvent\AcceptEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectEvent.h">
+      <Filter>ServerCore\IocpEvent\ConnectEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="RecvBuffer.h">
+      <Filter>ServerCore\Core\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="SendBuffer.h">
+      <Filter>ServerCore\Core\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadMgr.h">
+      <Filter>ServerCore\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RecvEvent.h">
+      <Filter>ServerCore\IocpEvent\RecvEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>ServerCore\Session\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="SendEvent.h">
+      <Filter>ServerCore\IocpEvent\SendEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
