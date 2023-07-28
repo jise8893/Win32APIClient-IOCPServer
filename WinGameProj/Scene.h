@@ -18,7 +18,8 @@ public:
 	virtual void Update();
 	void FinalUpdate();
 	const std::vector<shared_ptr<CObject>>& GetGroupObject(GROUP_TYPE gtype);
-
+public:
+	mutex& GetMutex() { return mMutex; }
 public:
 	void AddObject(shared_ptr<CObject> pObj, GROUP_TYPE gtype);
 	void DeleteGroup(GROUP_TYPE gType);

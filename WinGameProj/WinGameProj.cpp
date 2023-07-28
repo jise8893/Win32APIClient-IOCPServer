@@ -43,7 +43,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     NetMgr::GetInst()->Init();
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 1; i++)
     {
         ThreadMgr::GetInst()->Launch([=]() {
             while (true)

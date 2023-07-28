@@ -14,6 +14,8 @@ void CollisionMgr::ColllisionUpdateGroup(GROUP_TYPE gltype, GROUP_TYPE grtype)
 {
 	shared_ptr<Scene> pCurScene = SceneMgr::GetInst()->GetCurScene();
 	//참조받을 경우 받을 경우에도 반환변수도 레퍼런스 변수를 사용해야 함. 원본X
+	mutex& mMutex = pCurScene->GetMutex();
+	lock_guard<std::mutex> lockGuard(mMutex);
 	const vector<shared_ptr<CObject>>& vecLeft = pCurScene->GetGroupObject(gltype);
 	const vector<shared_ptr<CObject>>& vecRight = pCurScene->GetGroupObject(grtype);
 	for (size_t i = 0; i < vecLeft.size(); i++)

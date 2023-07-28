@@ -104,6 +104,11 @@ void NetMgr::EditUserData(BYTE* buffer, int len)
     {
         shared_ptr<OtherPlayer> pOtherPlayer = make_shared<OtherPlayer>(packet->socketId);
         pOtherPlayer->AllocComp();
+        shared_ptr<Scene> pScene = SceneMgr::GetInst()->GetCurScene();
+        if (pScene == nullptr)
+        {
+            return;
+        }
         SceneMgr::GetInst()->GetCurScene()->AddObject(pOtherPlayer, GROUP_TYPE::OTHER_PLAYER);
     }
 

@@ -24,10 +24,11 @@ void Scene::Render(HDC hdc)
 
 void Scene::Update()
 {
+	lock_guard<std::mutex> lockGuard(mMutex);
 	for (int i = 0; i < (int)GROUP_TYPE::END; i++)
 	{
 		
-			lock_guard<std::mutex> lockGuard(mMutex);
+			
 			for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++)
 			{
 
@@ -44,10 +45,10 @@ void Scene::Update()
 
 void Scene::FinalUpdate()
 {
+	lock_guard<std::mutex> lockGuard(mMutex); 
 	for (int i = 0; i < (int)GROUP_TYPE::END; i++) 
 	{
-		
-			lock_guard<std::mutex> lockGuard(mMutex);
+			
 			for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++)
 			{
 
@@ -55,13 +56,14 @@ void Scene::FinalUpdate()
 				vObj->FinalUpdate();
 			}
 		
-
 	}
 }
 
 const std::vector<shared_ptr<CObject>>& Scene::GetGroupObject(GROUP_TYPE gtype)
 {
+
 	// TODO: 여기에 return 문을 삽입합니다.
+
 	return mVecObjGroup[(UINT)gtype];
 }
 
