@@ -1,6 +1,7 @@
 #pragma once
 #include "CObject.h"
 #include "CKeyMgr.h"
+
 class Texture;
 enum class PLAYER_STATE {
 	PLAYER_DASH_RIGHT,

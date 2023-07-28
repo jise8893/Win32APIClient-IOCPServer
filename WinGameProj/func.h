@@ -1,4 +1,5 @@
 #pragma once
+extern std::mutex resMutex;
 class CObject;
 void CreateObject(shared_ptr<CObject> pObj,GROUP_TYPE gtype); 
 void DeleteObject(shared_ptr<CObject> pObj); 

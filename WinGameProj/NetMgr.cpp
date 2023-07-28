@@ -141,7 +141,7 @@ void NetMgr::Init()
     memset(&serverAddr, 0, sizeof(SOCKADDR_IN));  
     serverAddr.sin_family = AF_INET;  
     serverAddr.sin_port = htons(8000);   
-    inet_pton(AF_INET, "127.0.0.1", &serverAddr.sin_addr); 
+    inet_pton(AF_INET, "192.168.1.138", &serverAddr.sin_addr); 
     
     if (connect(clientSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR)
     {

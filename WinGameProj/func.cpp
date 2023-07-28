@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "func.h"
 #include "EventMgr.h"
+std::mutex resMutex;
 void CreateObject(shared_ptr<CObject> pObj, GROUP_TYPE gtype)
 {
 	tEvent event = {};

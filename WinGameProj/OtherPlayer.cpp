@@ -77,9 +77,12 @@ shared_ptr<CObject> OtherPlayer::Clone()
 OtherPlayer::OtherPlayer(int id)
 {
 	//Texture ·Îµù 
-	Sleep(500);
-	pTex = ResMgr::GetInst()->LoadTexture(L"Player", L"Texture\\Player\\Player.bmp");
-	pLeftTex = ResMgr::GetInst()->LoadTexture(L"PlayerReverse", L"Texture\\Player\\Player_reverse.bmp");
+	{
+		lock_guard<std::mutex> lockGuard(resMutex);
+		pTex = ResMgr::GetInst()->LoadTexture(L"Player", L"Texture\\Player\\Player.bmp");
+		pLeftTex = ResMgr::GetInst()->LoadTexture(L"PlayerReverse", L"Texture\\Player\\Player_reverse.bmp");
+	}
+
 	mfDuration = 0.05f;
 	mfAccTime = 0.f;
 	socketId = id;

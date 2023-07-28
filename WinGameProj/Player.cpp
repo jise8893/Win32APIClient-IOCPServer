@@ -11,6 +11,7 @@
 #include "Animation.h"
 #include "NetMgr.h"
 #include "Packet.h"
+
 void Player::Update()
 {
 	Vec2 vPos = GetPos();
@@ -205,12 +206,15 @@ void Player::CreateMissile()
 Player::Player()
 {
 	//Texture ·Îµù 
-	pTex=ResMgr::GetInst()->LoadTexture(L"Player",L"Texture\\Player\\Player.bmp"); 
-	pLeftTex=ResMgr::GetInst()->LoadTexture(L"PlayerReverse",L"Texture\\Player\\Player_reverse.bmp"); 
+	{
+		lock_guard<std::mutex> lockGuard(resMutex);
+		pTex = ResMgr::GetInst()->LoadTexture(L"Player", L"Texture\\Player\\Player.bmp");
+		pLeftTex = ResMgr::GetInst()->LoadTexture(L"PlayerReverse", L"Texture\\Player\\Player_reverse.bmp");
+	}
 	mfDuration = 0.05f;
 	mfAccTime = 0.f;
 	
-	mfPacketDuration = 0.04f;
+	mfPacketDuration = 0.07f;
 	mPacketTime = 0.f;
 	pState = PLAYER_STATE::PLAYER_STAND_RIGHT;
 }

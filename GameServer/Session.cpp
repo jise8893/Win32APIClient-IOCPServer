@@ -62,7 +62,7 @@ int Session::ProcessData(BYTE* byte, int numOfBytes)
 		processedLen += header.size;
 
 	}
-	//printf("processed len : %d \n", processedLen);
+	printf("processed len : %d \n", processedLen);
 	return processedLen;
 }
 
