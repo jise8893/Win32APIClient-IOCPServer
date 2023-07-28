@@ -7,7 +7,7 @@ int main()
 	shared_ptr<ServerCore> pServerCore = make_shared<ServerCore>();
 	pServerCore->Start();
 
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		ThreadMgr::GetInst()->Launch([=]() {
 			while (true)

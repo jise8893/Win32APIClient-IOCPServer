@@ -26,14 +26,19 @@ void Scene::Update()
 {
 	for (int i = 0; i < (int)GROUP_TYPE::END; i++)
 	{
-		for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++)
-		{
-			shared_ptr<CObject> vObj = *itr;
-			if (!(vObj->IsDead()))
+		
+			lock_guard<std::mutex> lockGuard(mMutex);
+			for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++)
 			{
-				vObj->Update(); 
+
+				shared_ptr<CObject> vObj = *itr;
+				if (!(vObj->IsDead()))
+				{
+					vObj->Update();
+				}
 			}
-		}
+		
+
 	}
 }
 
@@ -41,12 +46,16 @@ void Scene::FinalUpdate()
 {
 	for (int i = 0; i < (int)GROUP_TYPE::END; i++) 
 	{
-		for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++) 
-		{
-			
-			shared_ptr<CObject> vObj = *itr; 
-			vObj->FinalUpdate(); 
-		}
+		
+			lock_guard<std::mutex> lockGuard(mMutex);
+			for (auto itr = mVecObjGroup[i].begin(); itr != mVecObjGroup[i].end(); itr++)
+			{
+
+				shared_ptr<CObject> vObj = *itr;
+				vObj->FinalUpdate();
+			}
+		
+
 	}
 }
 
